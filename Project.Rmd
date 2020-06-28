@@ -1,0 +1,47 @@
+---
+title: "Developing Data Products"
+author: "Mauricio Ramírez Herrera"
+date: "6/27/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+This project is for the Week 2 Course Project under the Developing Data Products module of Coursera. The goal of this project is to create a map using the leaflet package of R, and to upload to a web page.
+
+For my particular project, I will be showcasing some universities in Costa Rica.
+
+## Data Sources
+* Information about the universities come from their respective websites
+* Map information from Google Maps and Leaflet
+
+## Loading Library
+
+For this particular case, I will only be using the leaflet library.
+```{r library}
+library(leaflet)
+```
+
+## Universities in Costa Rica
+
+The followind is the code I used, as well as the resulting map using the `Leaflet`package.
+
+```{r maps}
+map <- leaflet() %>% addTiles() %>%
+addMarkers(lat=9.937091, lng=-84.050770, popup = "Universidad de Costa Rica (https://www.ucr.ac.cr/)") %>%
+  addMarkers(lat=9.856211, lng=-83.911004, popup = "Instituto Tecnológico de Costa Rica (https://www.tec.ac.cr)") %>%
+addMarkers(lat=9.941054, lng=-84.047825, popup = "Universidad Estatal a Distancia (https://www.uned.ac.cr/)") %>%
+addMarkers(lat=9.999850, lng=-84.111143, popup = "Universidad Nacional (https://www.una.ac.cr/)") %>%
+addMarkers(lat=10.391826, lng=-84.438283, popup = "Universidad Técnica Nacional (www.utn.ac.cr/)") %>%    
+addMarkers(lat=9.933206, lng=-84.043486, popup = "Universidad Latina de Costa Rica (https://www.ulatina.ac.cr/)")  
+map
+```
+
+## Conclusion
+
+
+The resulting map shows the 6 universities across Metropolitan Area, Costa Rica, and links to their respective websites, should you want to learn more about them.
